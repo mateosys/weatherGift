@@ -19,6 +19,7 @@
 		A28DD8812929896C0017F26E /* weatherGiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28DD8802929896C0017F26E /* weatherGiftUITests.swift */; };
 		A28DD8832929896C0017F26E /* weatherGiftUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28DD8822929896C0017F26E /* weatherGiftUITestsLaunchTests.swift */; };
 		A28DD89029298AA60017F26E /* WeatherLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28DD88F29298AA60017F26E /* WeatherLocation.swift */; };
+		A2C3B71C292C6BAC0075D36C /* LocationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C3B71B292C6BAC0075D36C /* LocationDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		A28DD8802929896C0017F26E /* weatherGiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weatherGiftUITests.swift; sourceTree = "<group>"; };
 		A28DD8822929896C0017F26E /* weatherGiftUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weatherGiftUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A28DD88F29298AA60017F26E /* WeatherLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherLocation.swift; sourceTree = "<group>"; };
+		A2C3B71B292C6BAC0075D36C /* LocationDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailViewController.swift; sourceTree = "<group>"; };
 		EEED2347231E56421E98F866 /* libPods-weatherGift.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-weatherGift.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -129,8 +131,9 @@
 			children = (
 				A28DD85F2929896A0017F26E /* AppDelegate.swift */,
 				A28DD8612929896A0017F26E /* SceneDelegate.swift */,
-				A28DD8632929896A0017F26E /* LocationListViewController.swift */,
 				A28DD88F29298AA60017F26E /* WeatherLocation.swift */,
+				A2C3B71B292C6BAC0075D36C /* LocationDetailViewController.swift */,
+				A28DD8632929896A0017F26E /* LocationListViewController.swift */,
 				A28DD8652929896A0017F26E /* Main.storyboard */,
 				A28DD8682929896C0017F26E /* Assets.xcassets */,
 				A28DD86A2929896C0017F26E /* LaunchScreen.storyboard */,
@@ -336,6 +339,7 @@
 				A28DD89029298AA60017F26E /* WeatherLocation.swift in Sources */,
 				A25A31F3292B5611002CC0F5 /* APIkeys.swift in Sources */,
 				A28DD8602929896A0017F26E /* AppDelegate.swift in Sources */,
+				A2C3B71C292C6BAC0075D36C /* LocationDetailViewController.swift in Sources */,
 				A28DD8622929896A0017F26E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
