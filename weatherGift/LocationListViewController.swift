@@ -23,17 +23,20 @@ class LocationListViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-//        var weatherLocation = WeatherLocation(name: "Boyga, MA", lattitude: 0, longtitue: 0)
-//        weatherLocations.append(weatherLocation)
-//        weatherLocation = WeatherLocation(name: "Cooltown, CA", lattitude: 0, longtitue: 0)
-//        weatherLocations.append(weatherLocation)
-//        weatherLocation = WeatherLocation(name: "Horseville, TX", lattitude: 0, longtitue: 0)
-//        weatherLocations.append(weatherLocation)
         
     }//OVRRIDECURLY
     
+    func saveLocations(){
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(weatherLocations){
+            UserDefaults.standard.set(encoded, forKey: "weatherLocations")
+        }else {
+            print("ERROR: Saving Encoding did not work")
+        }
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         selectedLocationIndex = tableView.indexPathForSelectedRow!.row
+       saveLocations()
     }
 
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
@@ -91,7 +94,7 @@ extension LocationListViewController: GMSAutocompleteViewControllerDelegate {
 
   // Handle the user's selection.
   func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
-      let newlocation = WeatherLocation(name: place.name ?? "unknown place", lattitude: place.coordinate.latitude, longtitue: place.coordinate.longitude)
+      let newlocation = WeatherLocation(name: place.name ?? "unknown place", lattitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
       weatherLocations.append(newlocation)
       tableView.reloadData()
     dismiss(animated: true, completion: nil)

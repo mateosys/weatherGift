@@ -21,10 +21,25 @@ class LocationDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if weatherLocation == nil {
-            weatherLocation = WeatherLocation(name: "current location", lattitude: 0.0, longtitue: 0.0)
+            weatherLocation = WeatherLocation(name: "current location", lattitude: 0.0, longitude: 0.0)
         }
+        loadLocations()
         updateUserInterface()
         
+    }
+    
+    func loadLocations(){
+        guard let locationsEncoded = UserDefaults.standard.value(forKey: "weatherLocations")
+                as? Data else{
+            print("could not load weatherlocations, if this is this first time opening app, ignore this. ")
+            return
+        }
+        let decoder = JSONDecoder()
+        if let weatherLocations = try? decoder.decode(Array.self, from: locationsEncoded) as [WeatherLocation] {
+            self.weatherLocations = weatherLocations
+        } else {
+            print("error couldnt' decode data read from userdefaults")
+        }
     }
     
     func updateUserInterface() {
