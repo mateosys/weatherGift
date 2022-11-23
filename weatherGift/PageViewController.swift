@@ -16,6 +16,7 @@ class PageViewController: UIPageViewController {
         
         self.delegate = self
         self.dataSource = self
+        
         loadLocations()
         setViewControllers([createLocationDetailViewController(forPage: 0)], direction: .forward, animated: false)
     }

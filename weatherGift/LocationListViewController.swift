@@ -71,7 +71,7 @@ extension LocationListViewController: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         cell.textLabel?.text = weatherLocations[indexPath.row].name
-        cell.detailTextLabel?.text = "lat:\(weatherLocations[indexPath.row].lattitude), long: \(weatherLocations[indexPath.row].longtitue)"
+        cell.detailTextLabel?.text = "lat:\(weatherLocations[indexPath.row].lattitude), long: \(weatherLocations[indexPath.row].longitude)"
         return cell
     }
     
@@ -110,13 +110,6 @@ extension LocationListViewController: GMSAutocompleteViewControllerDelegate {
     dismiss(animated: true, completion: nil)
   }
 
-  // Turn the network activity indicator on and off again.
-  func didRequestAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
-    UIApplication.shared.isNetworkActivityIndicatorVisible = true
-  }
-
-  func didUpdateAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
-    UIApplication.shared.isNetworkActivityIndicatorVisible = false
-  }
+  
 
 }
